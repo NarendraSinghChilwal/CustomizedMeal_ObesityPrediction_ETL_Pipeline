@@ -1,0 +1,24 @@
+# .gitignore
+
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+
+# Django migrations (optional—if you do not want to version them)
+*/migrations/*.py
+*/migrations/__pycache__/
+
+# Local SQLite database
+db.sqlite3
+
+# Virtual environment folders (do not upload)
+venv/
+env/
+.venv/
+
+# Environment variable files (containing secrets)
+.env
+
+# Dagster run history / logs (if any)
+*.db
+*.log
