@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly Meal Plan</title>
+</head>
+<body>
+    <h1>Weekly Meal Plan</h1>
+    <p>Daily Calorie Requirement: {{ daily_calories }} kcal</p>
+
+    {% for day, meals in weekly_plan.items %}
+        <h2>{{ day }}</h2>
+        <ul>
+            {% for meal, recipe in meals.items %}
+                <li>
+                    <strong>{{ meal }}:</strong>
+                    {% if recipe %}
+                        {{ recipe.name }} ({{ recipe.calories }} kcal)
+                        <ul>
+                            <li>Category: {{ recipe.category }}</li>
+                            <li>Prep Time: {{ recipe.prep_time }}</li>
+                            <li>Cook Time: {{ recipe.cook_time }}</li>
+                            <li>Ingredients: {{ recipe.ingredients }}</li>
+                            <li>Protein: {{ recipe.protein }}g</li>
+                            <li>Fat: {{ recipe.fat }}g</li>
+                            <li>Carbs: {{ recipe.carbs }}g</li>
+                        </ul>
+                    {% else %}
+                        No recipe available for this category/calorie range.
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>

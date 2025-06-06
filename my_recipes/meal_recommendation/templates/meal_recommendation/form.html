@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meal Plan Generator</title>
+</head>
+<body>
+    <h1>Meal Plan Generator</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Render the Django form here -->
+        <button type="submit">Generate Meal Plan</button>
+    </form>
+</body>
+</html>

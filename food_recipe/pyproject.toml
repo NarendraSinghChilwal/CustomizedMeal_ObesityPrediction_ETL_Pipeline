@@ -1,0 +1,27 @@
+[project]
+name = "food_recipe"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "dagster",
+    "dagster-cloud",
+]
+
+[project.optional-dependencies]
+dev = [
+    "dagster-webserver", 
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.dagster]
+module_name = "food_recipe.definitions"
+project_name = "food_recipe"
+
+[tool.setuptools.packages.find]
+exclude=["food_recipe_tests"]
