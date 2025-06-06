@@ -1,0 +1,12 @@
+# requirements.txt
+
+Django>=4.1.0
+djangorestframework>=3.14.0          # if you use DRF
+psycopg2-binary>=2.9.5               # or `mysqlclient` if you use MySQL
+python-dotenv>=1.0.0                 # for .env support
+celery>=5.3.0                        # if your Dagster tasks use Celery
+dagster>=1.0.0                       # replace with the exact version you used
+dagit>=1.0.0
+pandas>=2.1.0                        # for any dataframes in your ETL
+sqlparse>=0.5.2                      # Django often needs this
+redis>=4.5.0                         # if you use Redis as the broker
