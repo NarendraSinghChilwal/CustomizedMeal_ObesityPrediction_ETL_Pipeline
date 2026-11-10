@@ -171,7 +171,7 @@ def store_data_in_postgres(fetch_and_preprocess_data):
     print(fetch_and_preprocess_data.head())
 
     # Define SQLAlchemy engine
-    engine = create_engine("postgresql+psycopg2://postgres:Performance%4099@localhost:5432/Recipe")
+    engine = create_engine(os.environ["RECIPE_DB_URL"])
 
     # Map column types for PostgreSQL
     dtype_mapping = {
