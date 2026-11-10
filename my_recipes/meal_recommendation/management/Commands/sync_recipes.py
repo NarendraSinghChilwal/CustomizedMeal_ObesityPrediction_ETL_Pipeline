@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand
 from meal_recommendation.models import Recipe, Ingredient
+import os
 import psycopg2
 
 class Command(BaseCommand):
@@ -10,7 +11,7 @@ class Command(BaseCommand):
         conn = psycopg2.connect(
             database="Recipe",
             user="postgres",
-            password="Performance@99",
+            password=os.environ["RECIPE_DB_PASSWORD"],
             host="localhost",
             port="5432"
         )
